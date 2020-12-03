@@ -8,16 +8,10 @@ class Counter extends Component {
     };
   }
 
-  onClickPlus = () => {
+  HandleOnClick = (i) => {
     const { count } = this.state;
     this.setState({
-      count: count + 1,
-    });
-  };
-  onClickMinus = () => {
-    const { count } = this.state;
-    this.setState({
-      count: count - 1,
+      count: count + i,
     });
   };
   render() {
@@ -26,8 +20,8 @@ class Counter extends Component {
       <div>
         <h1>Hello</h1>
         <p>You clicked {count} times</p>
-        <button onClick={this.onClickMinus}>-</button>
-        <button onClick={this.onClickPlus}>+</button>
+        <button onClick={(i) => this.HandleOnClick(-1)}>-</button>
+        <button onClick={(i) => this.HandleOnClick(1)}>+</button>
       </div>
     );
   }
